@@ -52,3 +52,6 @@ Shifted result = 0xc080 (decimal: -16256, binary: 1100000010000000)
 ```
 # Waveforms
 Run `make wave` to startup an instance of gtkwave with the testbench after running
+
+<img width="1061" height="496" alt="Screenshot 2026-06-14 133506" src="https://github.com/user-attachments/assets/ff244e43-120e-4608-84b8-6c0ee8975e50" />
+
