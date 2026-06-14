@@ -1,7 +1,7 @@
 //Verilog HDL for "lab3", "shiftin" "verilog"
 
 
-module shiftin #(parameter DATA_WIDTH = 8, COUNTER_WIDTH = 4) (X_in, Sx, reset, Clk, X_parallel, Fx );
+module shiftin #(parameter DATA_WIDTH = 8) (X_in, Sx, reset, Clk, X_parallel, Fx );
 
 input X_in, Sx, reset, Clk;
 output [DATA_WIDTH-1:0] X_parallel;
@@ -10,6 +10,8 @@ reg [DATA_WIDTH-1:0] X_parallel;
 reg Fx;
 reg [COUNTER_WIDTH-1:0] counter;
 reg new_shift_in;
+
+localparam COUNTER_WIDTH = $clog2(DATA_WIDTH + 1);
 
 always @(posedge Clk or posedge reset)
 	if (reset) begin //non-blocking statements

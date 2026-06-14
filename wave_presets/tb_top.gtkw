@@ -1,0 +1,48 @@
+[*]
+[*] GTKWave Analyzer v3.3.104 (w)1999-2020 BSI
+[*] Sun Jun 14 03:48:44 2026
+[*]
+[dumpfile] "/mnt/d/code/signed_multiplier/tb_top.vcd"
+[dumpfile_mtime] "Sun Jun 14 03:46:19 2026"
+[dumpfile_size] 14271
+[savefile] "/mnt/d/code/signed_multiplier/tb_top.gtkw"
+[timestart] 235
+[size] 1890 600
+[pos] -906 -519
+*-2.329513 142 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] TOP.
+[treeopen] TOP.tb_top.
+[sst_width] 332
+[signals_width] 178
+[sst_expanded] 1
+[sst_vpaned_height] 176
+@28
+TOP.tb_top.Clk
+TOP.tb_top.reset
+TOP.tb_top.Don
+TOP.tb_top.Fx
+TOP.tb_top.Fy
+TOP.tb_top.Fz
+TOP.tb_top.Mul
+TOP.tb_top.Sx
+TOP.tb_top.Sy
+TOP.tb_top.Sz
+TOP.tb_top.X_in
+TOP.tb_top.X_parallel[7:0]
+@24
+TOP.tb_top.X_pos[7:0]
+@28
+TOP.tb_top.Y_in
+TOP.tb_top.Y_parallel[7:0]
+@24
+TOP.tb_top.Y_pos[7:0]
+@28
+TOP.tb_top.Z_out
+@22
+TOP.tb_top.Z_parallel[15:0]
+@25
+TOP.tb_top.Z_pos[15:0]
+@28
+TOP.tb_top.negative_w
+[pattern_trace] 1
+[pattern_trace] 0

@@ -1,13 +1,15 @@
 //Verilog HDL for "lab3", "shiftout" "verilog"
 
-
-module shiftout #(parameter DATA_WIDTH = 16, COUNTER_WIDTH = 5) (Z_parallel, Sx, reset, Clk, Z_out, Fx );
+module shiftout #(parameter DATA_WIDTH = 16) (Z_parallel, Sx, reset, Clk, Z_out, Fx);
 input [DATA_WIDTH-1:0] Z_parallel;
 input Sx, reset, Clk;
 output Z_out, Fx;
 reg Z_out, Fx;
 reg [COUNTER_WIDTH-1:0] counter;
+reg [DATA_WIDTH-1:0] Z_serial;
 reg new_shift_out;
+
+localparam COUNTER_WIDTH = $clog2(DATA_WIDTH + 1);
 
 always @(posedge Clk or posedge reset)
 	if (reset) begin //non-blocking statements
@@ -19,16 +21,18 @@ always @(posedge Clk or posedge reset)
 		if(new_shift_out ==1'b0) begin //reset counter if new stream of bits
 			new_shift_out = 1'b1;
 			counter = {COUNTER_WIDTH{1'b0}};
+			Z_serial = Z_parallel;
 		end
 			
-		if(counter < DATA_WIDTH) begin
-			Z_out = Z_parallel[counter]; //set new bit to next place
+		if(counter < DATA_WIDTH[COUNTER_WIDTH-1:0]) begin
+			Z_out = Z_serial[DATA_WIDTH-1]; //set new bit to next place
+			Z_serial = Z_serial << 1;
 			counter = counter + 1; //increment counter
-			if(counter == DATA_WIDTH) begin //once DATA_WIDTH bits have passed through, set Fx to high
+			if(counter == DATA_WIDTH[COUNTER_WIDTH-1:0]) begin //once DATA_WIDTH bits have passed through, set Fx to high
 				Fx = 1'b1;
 				new_shift_out = 1'b0;
 			end
 		end
 	end
-
+	
 endmodule

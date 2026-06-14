@@ -1,7 +1,5 @@
-
 // Verilog stimulus file.
 // Please do not create a module in this file.
-
 
 // Default verilog stimulus. 
 parameter TB_TOP_X_WIDTH = 8;
@@ -253,7 +251,7 @@ begin
 	#10 Sz = 1'b1;
 	#200 Sz = 1'b0;
 
-        #100 reset = 1'b1;
-        #10 $finish;
+    #100 reset = 1'b1;
+    #10 $finish;
 end
 
